@@ -13,7 +13,7 @@ const filterFn = jest.fn();
 
 describe("<SearchBar />", () => {
   it("calls the passed in filter function when the input changes", () => {
-    const wrapper = mount(<SearchBar filter={filterFn} />);
+    const wrapper = mount(<SearchBar filterAuthors={filterFn} />);
     type(wrapper, "search", "lol");
     expect(filterFn).toHaveBeenCalled();
     expect(filterFn).toHaveBeenCalledWith("lol");
